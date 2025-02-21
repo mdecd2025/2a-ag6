@@ -1,3 +1,6 @@
+2a-ag6協同產品設計與實習
+作業網站:https://mdecd2025.github.io/2a-ag6/
+倉儲網站:https://github.com/mdecd2025/2a-ag6
 # cmsimde_site
 
 利用 init_replit 指令安裝所需 Python 模組
