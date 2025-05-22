@@ -27,8 +27,62 @@
 <p><span><em><strong>2. </strong></em>目錄中的 start_ipv6.bat 啟動可攜系統，</span>接著修改 start_ipv6.bat，利用 Search - Replace，Find 欄位填上 Python311，Replace 欄位填上 Python313 後，按下 Replace All，便可將啟動檔中所有 Python311 設定改為 Python313，另存修改後的檔案為 start_python313.bat。</p>
 <p><em><strong>3. </strong></em><span>以 stop.bat 關閉 start_ipv6.bat 開啟的可攜系統，改以心建立的 start_python313.bat 開啟可攜環境，之後在命令列輸入 python，確認目前的 Python 版本為 3.13.2 後，利用 Ctrl + z 退出 Python 後，利用 pip list 確認目前的 Python 3.13.2 系統尚未配置 pip 模組管理工具。</span></p>
 <p><span><em><strong>4. </strong></em>在命令列中，以 python get-pip.py 安裝 pip 工具，完成後，以 pip list 確認 pip.exe 已經配置完成。</span></p>
-<p><span><em><strong>5.</strong></em> 最後在命令列中，以 pip install flask flask_cors bs4 lxml pelican markdown 安裝 cmsimde 網際內容管理系統啟動所需的 Python 模組後，此可攜系統中的 Python 3.13.2 套件已經可以用來維護個人作業倉儲與分組倉儲。</span></p><h2>task2</h2>
-<h2>task3</h2>
+<p><span><em><strong>5.</strong></em> 最後在命令列中，以 pip install flask flask_cors bs4 lxml pelican markdown 安裝 cmsimde 網際內容管理系統啟動所需的 Python 模組後，此可攜系統中的 Python 3.13.2 套件已經可以用來維護個人作業倉儲與分組倉儲。</span></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="300" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/E3gKzG2Henk?si=CqjaE5bnKzBVBGFO" title="YouTube video player" width="450"></iframe></p><h2>task2</h2>
+<p><span>1. 設定 Git 使用 PuTTY</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[remote "origin"]
+    url = git@mysession:用戶名/倉儲名.git
+    fetch = +refs/heads/*:refs/remotes/origin/*</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">set GIT_SSH=Y:\putty\plink.exe</pre>
+<p>2. 用 PuTTYgen 產生金鑰</p>
+<ul>
+<li class="" data-end="210" data-start="190">
+<p class="" data-end="210" data-start="193">開啟<span style="color: #eb0ed5;">puttygen.exe</span></p>
+</li>
+<li class="" data-end="234" data-start="211">
+<p class="" data-end="234" data-start="214">點【Generate】，移動滑鼠產生金鑰</p>
+</li>
+<li class="" data-end="293" data-start="235">
+<p class="" data-end="293" data-start="238">複製上方的 Public Key 到 GitHub &gt; Settings &gt; SSH and GPG keys</p>
+</li>
+<li class="" data-end="342" data-start="294">
+<p class="" data-end="342" data-start="297">點【Save private key】，儲存為<span> </span><span style="color: #eb0ed5;"><code data-end="342" data-start="321">Y<span style="color: #eb0ed5;">:\myprivatekey.ppk</span></code></span></p>
+</li>
+</ul>
+<p><span style="color: #eb0ed5;"><code data-end="342" data-start="321">3. 建立 SSH Session（mysession）</code></span></p>
+<ul>
+<li class="" data-end="398" data-start="381">
+<p class="" data-end="398" data-start="384"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">開啟 <code data-end="398" data-start="387">putty.exe</code></code></span></p>
+</li>
+<li class="" data-end="427" data-start="399">
+<p class="" data-end="427" data-start="402"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">Host Name 輸入：<code data-end="427" data-start="415">github.com</code></code></span></p>
+</li>
+<li class="" data-end="463" data-start="428">
+<p class="" data-end="463" data-start="431"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">Session 名稱輸入：<code data-end="455" data-start="444">mysession</code>，點【Save】</code></span></p>
+</li>
+</ul>
+<p><span style="color: #eb0ed5;"><code data-end="342" data-start="321">4. 設定 Session 的私鑰</code></span></p>
+<ul>
+<li class="" data-end="516" data-start="491">
+<p class="" data-end="516" data-start="494"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">在 PuTTY 載入 <code data-end="516" data-start="505">mysession</code></code></span></p>
+</li>
+<li class="" data-end="571" data-start="517">
+<p class="" data-end="571" data-start="520"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">左側：Connection &gt; SSH &gt; Auth，選擇 <code data-end="571" data-start="550">Y:\myprivatekey.ppk</code></code></span></p>
+</li>
+<li class="" data-end="594" data-start="572">
+<p class="" data-end="594" data-start="575"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">回到 Session 再次【Save】</code></span></p>
+</li>
+</ul>
+<p>5. 匯出 Session 設定（可攜使用）</p>
+<ul>
+<li class="" data-end="647" data-start="627">
+<p class="" data-end="647" data-start="630"><span style="color: #eb0ed5;"><code data-end="639" data-start="630">regedit</code></span><span> </span>打開登錄編輯器</p>
+</li>
+<li class="" data-end="685" data-start="648">
+<p class="" data-end="685" data-start="651">匯出<span> </span><span style="color: #eb0ed5;"><code data-end="665" data-start="654">mysession</code> </span>設定為<span style="color: #eb0ed5;"> <code data-end="685" data-start="670">mysession.reg</code></span></p>
+</li>
+</ul>
+<p><br/><br/><br/><br/></p><h2>task3</h2>
 <h2>task4</h2>
 <h2>task5</h2>
 <h1>w3</h1>

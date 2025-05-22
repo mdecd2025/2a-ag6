@@ -143,7 +143,66 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">task1 << <a href='task1.html'>Previous</a> <a href='task3.html'>Next</a> >> task3<br /><h1>task2</h1>
-<br />task1 << <a href='task1.html'>Previous</a> <a href='task3.html'>Next</a> >> task3</div>
+<p><span>1. 設定 Git 使用 PuTTY</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[remote "origin"]
+    url = git@mysession:用戶名/倉儲名.git
+    fetch = +refs/heads/*:refs/remotes/origin/*</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">set GIT_SSH=Y:\putty\plink.exe</pre>
+<p>2. 用 PuTTYgen 產生金鑰</p>
+<ul>
+<li class="" data-end="210" data-start="190">
+<p class="" data-end="210" data-start="193">開啟<span style="color: #eb0ed5;">puttygen.exe</span></p>
+</li>
+<li class="" data-end="234" data-start="211">
+<p class="" data-end="234" data-start="214">點【Generate】，移動滑鼠產生金鑰</p>
+</li>
+<li class="" data-end="293" data-start="235">
+<p class="" data-end="293" data-start="238">複製上方的 Public Key 到 GitHub &gt; Settings &gt; SSH and GPG keys</p>
+</li>
+<li class="" data-end="342" data-start="294">
+<p class="" data-end="342" data-start="297">點【Save private key】，儲存為<span> </span><span style="color: #eb0ed5;"><code data-end="342" data-start="321">Y<span style="color: #eb0ed5;">:\myprivatekey.ppk</span></code></span></p>
+</li>
+</ul>
+<p><span style="color: #eb0ed5;"><code data-end="342" data-start="321">3. 建立 SSH Session（mysession）</code></span></p>
+<ul>
+<li class="" data-end="398" data-start="381">
+<p class="" data-end="398" data-start="384"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">開啟 <code data-end="398" data-start="387">putty.exe</code></code></span></p>
+</li>
+<li class="" data-end="427" data-start="399">
+<p class="" data-end="427" data-start="402"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">Host Name 輸入：<code data-end="427" data-start="415">github.com</code></code></span></p>
+</li>
+<li class="" data-end="463" data-start="428">
+<p class="" data-end="463" data-start="431"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">Session 名稱輸入：<code data-end="455" data-start="444">mysession</code>，點【Save】</code></span></p>
+</li>
+</ul>
+<p><span style="color: #eb0ed5;"><code data-end="342" data-start="321">4. 設定 Session 的私鑰</code></span></p>
+<ul>
+<li class="" data-end="516" data-start="491">
+<p class="" data-end="516" data-start="494"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">在 PuTTY 載入 <code data-end="516" data-start="505">mysession</code></code></span></p>
+</li>
+<li class="" data-end="571" data-start="517">
+<p class="" data-end="571" data-start="520"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">左側：Connection &gt; SSH &gt; Auth，選擇 <code data-end="571" data-start="550">Y:\myprivatekey.ppk</code></code></span></p>
+</li>
+<li class="" data-end="594" data-start="572">
+<p class="" data-end="594" data-start="575"><span style="color: #eb0ed5;"><code data-end="342" data-start="321">回到 Session 再次【Save】</code></span></p>
+</li>
+</ul>
+<p>5. 匯出 Session 設定（可攜使用）</p>
+<ul>
+<li class="" data-end="647" data-start="627">
+<p class="" data-end="647" data-start="630"><span style="color: #eb0ed5;"><code data-end="639" data-start="630">regedit</code></span><span> </span>打開登錄編輯器</p>
+</li>
+<li class="" data-end="685" data-start="648">
+<p class="" data-end="685" data-start="651">匯出<span> </span><span style="color: #eb0ed5;"><code data-end="665" data-start="654">mysession</code> </span>設定為<span style="color: #eb0ed5;"> <code data-end="685" data-start="670">mysession.reg</code></span></p>
+</li>
+</ul>
+<p><span style="color: #eb0ed5;">6. 設定 Git 倉儲 URL</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[remote "origin"]
+    url = git@mysession:用戶名/倉儲名.git
+    fetch = +refs/heads/*:refs/remotes/origin/*</pre>
+<p><span>最後完成推送：</span></p>
+<pre class="brush:java;auto-links:false;toolbar:false" contenteditable="false">git push origin main</pre>
+<p><br/><br/><br/><br/></p><br />task1 << <a href='task1.html'>Previous</a> <a href='task3.html'>Next</a> >> task3</div>
         
     <!-- footer -->
       <div class="container">
